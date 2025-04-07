@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple MP3 Player</title>
+   <style type="text/css">
+       * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white     ;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.player-container {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    width: 320px;
+}
+
+.player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.player-header h2 {
+    color: white;
+    margin-bottom: 15px;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    background-color: #ff5c5c;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #ff3b3b;
+}
+
+input[type="range"] {
+    width: 90%;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.time {
+    color: white;
+    margin-bottom: 15px;
+}
+
+#volume {
+    width: 80%;
+}
+
+   </style>
+</head>
+<body>
+    <div class="player-container">
+        <div class="player">
+            <div class="player-header">
+                <h2>MP3 Player</h2>
+            </div>
+            <div class="controls">
+                <button id="play-pause-btn" class="play">Play</button>
+                <input type="range" id="seek-bar" value="0" min="0" max="100" step="1">
+                <div class="time">
+                    <span id="current-time">00:00</span> / <span id="total-time">00:00</span>
+                </div>
+                <input type="range" id="volume" value="100" min="0" max="100" step="1">
+            </div>
+            <audio id="audio" src="C:/Users/admin/Downloads/ch1%20p1(2).mp3"></audio>
+        </div>
+    </div>
+
+    <script>const audio = document.getElementById("audio");
+const playPauseBtn = document.getElementById("play-pause-btn");
+const seekBar = document.getElementById("seek-bar");
+const currentTimeDisplay = document.getElementById("current-time");
+const totalTimeDisplay = document.getElementById("total-time");
+const volumeControl = document.getElementById("volume");
+
+playPauseBtn.addEventListener("click", togglePlayPause);
+audio.addEventListener("timeupdate", updateProgress);
+audio.addEventListener("loadedmetadata", updateTotalTime);
+seekBar.addEventListener("input", seekAudio);
+volumeControl.addEventListener("input", changeVolume);
+
+function togglePlayPause() {
+    if (audio.paused) {
+        audio.play();
+        playPauseBtn.textContent = "Pause";
+        playPauseBtn.classList.remove("play");
+        playPauseBtn.classList.add("pause");
+    } else {
+        audio.pause();
+        playPauseBtn.textContent = "Play";
+        playPauseBtn.classList.remove("pause");
+        playPauseBtn.classList.add("play");
+    }
+}
+
+function updateProgress() {
+    const progress = (audio.currentTime / audio.duration) * 100;
+    seekBar.value = progress;
+    currentTimeDisplay.textContent = formatTime(audio.currentTime);
+}
+
+function updateTotalTime() {
+    totalTimeDisplay.textContent = formatTime(audio.duration);
+}
+
+function seekAudio() {
+    const seekTime = (seekBar.value / 100) * audio.duration;
+    audio.currentTime = seekTime;
+}
+
+function changeVolume() {
+    audio.volume = volumeControl.value / 100;
+}
+
+function formatTime(time) {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+}
+</script>
+</body>
+</html>

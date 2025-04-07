@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Echobook</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: white;
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(to right, #ff758c, #ff7eb3);
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .tagline {
+      text-align: center;
+      margin: 10px 0;
+      font-size: 18px;
+      color: #333;
+    }
+
+    /* Content */
+    .content {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .book-name {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .book-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .book-image img {
+      width: 200px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .book-description {
+      border: 2px solid black;
+      padding: 20px;
+      width: 300px;
+      font-size: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .book-section {
+        flex-direction: column;
+      }
+    }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: white;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        td a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        td a:hover {
+            text-decoration: underline;
+        }
+  </style>
+</head>
+<body background="C:/Users/admin/bk.png">
+
+  <div class="header">
+    <div class="logo">ECHOBOOK</div>
+    <div class="nav">
+      <a href="#">Home</a>
+      <a href="#">Library</a>
+      <a href="#">About Us</a>
+    </div>
+  </div>
+
+  <div class="tagline">Time Less, Learn More</div>
+
+  <div class="content">
+    <div class="book-name" id="bookName">BOOK NAME</div>
+    <div class="book-section">
+      <div class="book-image">
+        <img src="https://m.media-amazon.com/images/I/81bsw6fnUiL.jpg" alt="Book Cover" />
+      </div>
+      <div class="book-description" id="bookDescription">DESCRIPTION</div>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript to change book details dynamically
+    const bookName = document.getElementById('bookName');
+    const bookDescription = document.getElementById('bookDescription');
+  
+    // Example data (you can replace with dynamic data or API)
+    bookName.textContent = "Rich Dad Poor Dad";
+    bookDescription.textContent = "What the Rich Teach Their Kids About Money – That the Poor and Middle Class Do Not! A classic personal finance book by Robert T. Kiyosaki.";
+  </script>
+
+<table border="1">
+        <thead>
+            <tr>
+                <th>Chapter</th>
+                <th>NAMES</th>
+            </tr>
+        </thead>
+        <tbody>
+             <tr>
+                <td>Chapter 0</td>
+                <td><a href="C:/Users/admin/EW/player.html">INTRODUCTION</a></td>
+            </tr>
+            <tr>
+                <td>Chapter 1</td>
+                <td><a href="https://example.com/john">The Rich Don't Work For Money</a></td>
+            </tr>
+            <tr>
+                <td>Chapter 2</td>
+                <td><a href="https://example.com/jane">Why Teach Financial Literacy?</a></td>
+            </tr>
+            <tr>
+                <td>Chapter 3</td>
+                <td><a href="https://example.com/alex">Mind Your ouw Business</a></td>
+            </tr>
+            <tr>
+                <td>Chapter 4</td>
+                <td><a href="https://example.com/emily">History of  taxes and Power of Corporations</a></td>
+            </tr>
+            <tr>
+                <td>Chapter 5</td>
+                <td><a href="https://example.com/michael">The Rich Invest Money</a></td>
+            </tr>
+            <tr>
+                <td>Chapter 6</td>
+                <td><a href="https://example.com/sarah">Work to learn, Don't For Money</a></td>
+            </tr>
+            <tr>
+                <td>Chapter 7</td>
+                <td><a href="https://example.com/david">Overcoming obstacles</a></td>
+            </tr>
+            <tr>
+                <td>Chapter 8</td>
+                <td><a href="https://example.com/david">Getting Started</a></td>
+            </tr>
+            <tr>
+                <td>Chapter 9</td>
+                <td><a href="https://example.com/david">Still Want More? Here Are Some To Do's</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <hr>
+    <h3>Disclaimer :</h3>
+    <p>
+
+The images and content featured on this website are intended for educational purposes only. All materials are used with the aim of supporting learning and are not for commercial use. Any third-party content remains the property of its respective owners, and we do not claim ownership of any copyrighted materials. If you believe any content on this site infringes upon your copyright, please contact us, and we will address the issue promptly.
+
+
+    </p>
+    <br>
+    <br>
+  <div class="more">
+    <a href="#">MORE BOOKS => </a>
+  </div>
+  <br>
+  <hr>
+  <br>
+  <h2>Thank You for Visiting Our Website!</h2>
+  <p>
+    <b>
+
+We truly appreciate you taking the time to visit our website. Whether you’re here to explore our products, learn about our services, or simply browsing for information, we’re grateful for your interest. Your visit means a lot to us, and we’re excited to have the opportunity to connect with you.
+
+At [Your Company Name], we strive to create an engaging and informative experience for all of our visitors. Whether you’re a first-time guest or a returning customer, we’re committed to providing you with high-quality content, innovative products, and exceptional customer service. We hope you find everything you were looking for and that your time spent on our website was valuable.
+
+Our team is constantly working to improve the experience and functionality of our site, so if you have any suggestions or feedback, please don’t hesitate to reach out. We value your opinion and are always looking for ways to enhance our offerings and make your experience even better.
+
+In addition to the resources available on our website, we encourage you to stay connected with us through our social media channels or sign up for our newsletter. That way, you’ll be the first to know about new updates, special promotions, and exciting news from our team.
+
+Once again, thank you for visiting our website. We hope to serve you in the future and look forward to continuing our journey together. Your support and interest mean the world to us, and we’re here to help with any questions or needs you may have.
+
+Thank you for choosing
+</b>
+  </p>
+  <h2>
+Warm regards,
+[Harshvardhan]</h2>
+<br>
+<br>
+<h3 class="fd">
+  <a href="C:\Users\admin\EW\fd.html">FORM FEEDBACK CLICK HERE
+</a></h3>
+
+
+</body>
+</html>
